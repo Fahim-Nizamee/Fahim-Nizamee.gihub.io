@@ -28,7 +28,7 @@
         $(document).ready(function(){
             
           $("#add").click(function(){
-            $("ol").append('<li class="form-control shadow bg-warning"><input type="text" class="text-center col1 form-control" placeholder="Subject name"><select id="point" class="col1 text-center grade form-control"><option value="5.00">A+</option><option value="4.00">A</option><option value="3.50">A-</option><option value="3.00">B</option><option value="2.00">C</option><option value="1.00">D</option><option value="0.00">F</option></select><div class="clearfix"></div></li><br>');
+            $("#ol").append('<li class="form-control shadow bg-warning"><input type="text" class="text-center col1 form-control" placeholder="Subject name"><select id="point" class="col1 text-center grade form-control"><option value="5.00">A+</option><option value="4.00">A</option><option value="3.50">A-</option><option value="3.00">B</option><option value="2.00">C</option><option value="1.00">D</option><option value="0.00">F</option></select><div class="clearfix"></div></li><br>');
           });
         });
         </script>
@@ -99,7 +99,7 @@
     <div id="headerad"></div>
 
     <div class="form-control">
-        <ol><br>
+        <div id="ol"><br>
             <li class="form-control shadow bg-warning">
                 <input type="text" class="text-center col1 form-control" placeholder="Subject name"><select id="point" class="col1 text-center grade form-control">
                     <option value="5.00">A+</option>
@@ -112,7 +112,7 @@
                 </select>
                 <div class="clearfix"></div>
             </li><br>
-        </ol>
+        </div>
         <div class="text-center form-control shadow bg-dark"><br>
             <button class="btn btn-success" id="add">ADD</button>
             <button class="btn btn-primary" id="calculate">Calculate</button>
