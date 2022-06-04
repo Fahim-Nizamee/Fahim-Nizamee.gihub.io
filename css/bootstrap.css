@@ -86,7 +86,10 @@
     scroll-behavior: smooth;
   }
 }
-
+body {
+  background-image: linear-gradient(130deg, #ee60fb ,#f6f34b);
+  color: rgb(255, 255, 255);
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -2470,10 +2473,7 @@ textarea.form-control-lg {
   margin-right: -1.5em;
   margin-left: 0;
 }
-body {
-  background-image: linear-gradient(130deg, #01e3d4 ,#eb6906);
-  color: white;
-}
+
 .form-check-input {
   width: 1em;
   height: 1em;
