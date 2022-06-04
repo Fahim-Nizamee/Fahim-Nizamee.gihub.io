@@ -116,7 +116,7 @@
     border-style: solid;
   } */
   
-   button:hover {
+   /* button:hover {
     width: 15%;
     height: 40px;
     padding: 1px;
@@ -129,13 +129,13 @@
     border-color: #000;
   } */
   
-  .btn {
+  /* .btn {
     width: 100%;
     padding: 10px;
     display: inline-block;
     margin: 0 auto;
     text-align: center;
-  }
+  }  */
   .lastp {
     border: 1px solid #3D515C;
     background-color: #3D515C;
