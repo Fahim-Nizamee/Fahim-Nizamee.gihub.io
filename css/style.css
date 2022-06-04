@@ -11,6 +11,9 @@
     color: white;
   }
   
+  #bold {
+    font-weight: bolder; 
+  }
   #course-row {
     font-size: 20px;
     font-weight: bolder; 
