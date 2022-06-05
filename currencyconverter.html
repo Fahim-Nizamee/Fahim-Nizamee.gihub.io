@@ -111,7 +111,7 @@ const currencyLayer = {
 
 // GET ALL CURRENCIES CODES AND NAMES
 async function getCurrenciesList() {
-  const response = await fetch(currencyLayer.list());
+  const response = await fetch(currencyLayer.list());   
   const data = await response.json();
   const currencies = data.currencies;
 
