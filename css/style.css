@@ -6,10 +6,10 @@
   }
   
   
-  body {
+  /* body {
     background-image: linear-gradient(180deg, #01e3d4 ,#eb6906);
     color: white;
-  }
+  } */
   
   #bold {
     font-weight: bolder; 
@@ -156,4 +156,7 @@
     color: #000;
   } 
   
-  
+  .responsive {
+    max-width: 30%;
+    height: auto;
+  }
