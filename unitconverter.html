@@ -35,6 +35,11 @@
         <h1 class="text-center" style="font-variant-caps:petite-caps;">Unit Converter</h1>
     <div id="headerad"></div>
 
+    <div class="form-control bg-dark text-center" style="font-variant-caps:petite-caps;">
+        <label class="text-white">Output</label><br>
+        <span id="output" class="text-white">$ Enter valid value $</span>
+    </div>
+    <br>
         <div class="form-control text-center" style="font-variant-caps:petite-caps;">
             <label>Select Unit Type:</label>
             <select id="unitselect" class="value form-control text-center" onchange="selection()">
@@ -43,7 +48,7 @@
                 <option class="value" value="mass">Mass (weight)</option>
                 <!-- <option class="value" value="capacity">Capacity (volume)</option>
                 <option class="value" value="temperature">Temperature</option> -->
-                <option class="value" value="data">Data Unit</option>
+                <!-- <option class="value" value="data">Data Unit</option> -->
             </select> <br>
             <div  class="form-control bg-dark" id="add">
                     <div id="change">
@@ -51,11 +56,7 @@
                     </div>
             </div>
             <br>
-            <div class="form-control bg-dark"><br>
-                <button id="calculate" class="btn btn-success" onclick="Convert()">Convert</button><br><br>
-                <br>
-                <span id="output" class="text-white"></span>
-            </div>
+            
         </div>
 
     <div id="footerad"></div>
@@ -96,7 +97,7 @@ var num1 = $("#unitselect").val();
                         <option value="centimetre">Centimetre (cm)</option>
                         <option value="millimetre">Millimetre (mm)</option>
                     </select><br>
-                    <input class="form-control" type="number" id="value" placeholder="Enter Distance">
+                    <input class="form-control" type="number" id="value" placeholder="Enter Distance" oninput="Convert()">
                 </div>`;
                 document.getElementById("add").innerHTML = d;
     }
@@ -111,9 +112,9 @@ var num1 = $("#unitselect").val();
                         <option value="hectogram">Hectogram </option>
                         <option value="decagram">Decagram</option>
                         <option value="gram">Gram</option>
-                        <option value="decimetre">Decigram</option>
-                        <option value="centimetre">Centigram</option>
-                        <option value="millimetre">Milligram (mg)</option>
+                        <option value="decigram">Decigram</option>
+                        <option value="centigram">Centigram</option>
+                        <option value="milligram">Milligram (mg)</option>
                     </select>
                     <label class="text-white">To</label>
                     <select class="form-control text-center" id="to">
@@ -122,44 +123,44 @@ var num1 = $("#unitselect").val();
                         <option value="hectogram">Hectogram </option>
                         <option value="decagram">Decagram</option>
                         <option value="gram">Gram</option>
-                        <option value="decimetre">Decigram</option>
-                        <option value="centimetre">Centigram</option>
-                        <option value="millimetre">Milligram (mg)</option>
+                        <option value="decigram">Decigram</option>
+                        <option value="centigram">Centigram</option>
+                        <option value="milligram">Milligram (mg)</option>
                     </select><br>
-                    <input class="form-control" type="text" id="value" placeholder="Enter Weight">
+                    <input class="form-control" type="number" id="value" placeholder="Enter Weight" oninput="Convert()">
                 </div>`;
                 document.getElementById("add").innerHTML = d;
     }
-    else if(num1 == "data")
-    {
-    // const element = document.getElementById("change");
-    // element.remove();
-    const d=`<div class="text-center" id="change">
-                    <select class="form-control text-center" id="from">
-                        <option >Select</option>
-                        <option value="byte">Byte</option>
-                        <option value="kilobyte">Kilobyte</option>
-                        <option value="megabyte">Megabyte</option>
-                        <option value="gigabyte">Gigabyte</option>
-                        <option value="terabyte">Terabyte</option>
-                        <option value="petabyte">Petabyte</option>
-                        <option value="exabyte">Exabyte</option>
-                    </select>
-                    <label class="text-white">To</label>
-                    <select class="form-control text-center" id="to">
-                        <option >Select</option>
-                        <option value="byte">Byte</option>
-                        <option value="kilobyte">Kilobyte</option>
-                        <option value="megabyte">Megabyte</option>
-                        <option value="gigabyte">Gigabyte</option>
-                        <option value="terabyte">Terabyte</option>
-                        <option value="petabyte">Petabyte</option>
-                        <option value="exabyte">Exabyte</option>
-                    </select><br>
-                    <input class="form-control" type="text" id="value" placeholder="Enter Data Size">
-                </div>`;
-                document.getElementById("add").innerHTML = d;
-    }
+    // else if(num1 == "data")
+    // {
+    // // const element = document.getElementById("change");
+    // // element.remove();
+    // const d=`<div class="text-center" id="change">
+    //                 <select class="form-control text-center" id="from">
+    //                     <option >Select</option>
+    //                     <option value="byte">Byte</option>
+    //                     <option value="kilobyte">Kilobyte</option>
+    //                     <option value="megabyte">Megabyte</option>
+    //                     <option value="gigabyte">Gigabyte</option>
+    //                     <option value="terabyte">Terabyte</option>
+    //                     <option value="petabyte">Petabyte</option>
+    //                     <option value="exabyte">Exabyte</option>
+    //                 </select>
+    //                 <label class="text-white">To</label>
+    //                 <select class="form-control text-center" id="to">
+    //                     <option >Select</option>
+    //                     <option value="byte">Byte</option>
+    //                     <option value="kilobyte">Kilobyte</option>
+    //                     <option value="megabyte">Megabyte</option>
+    //                     <option value="gigabyte">Gigabyte</option>
+    //                     <option value="terabyte">Terabyte</option>
+    //                     <option value="petabyte">Petabyte</option>
+    //                     <option value="exabyte">Exabyte</option>
+    //                 </select><br>
+    //                 <input class="form-control" type="number" id="value" placeholder="Enter Data Size" oninput="Convert()">
+    //             </div>`;
+    //             document.getElementById("add").innerHTML = d;
+    // }
     else{
         const d =``;
                     document.getElementById("add").innerHTML = d;
@@ -363,6 +364,205 @@ function Convert()
             output = input/100;
         }
         else if(to=="centimetre")
+        {
+            output = input/10;
+        }
+        
+    }
+
+    //weight
+
+    if(from == "kilogram")
+    {
+        if(to=="hectogram")
+        {
+            output = input*10;
+        }
+        else if(to=="decagram")
+        {
+            output = input*100;
+        }
+        else if(to=="gram")
+        {
+            output = input*1000;
+        }
+        else if(to=="decigram")
+        {
+            output = input*10000;
+        }
+        else if(to=="centigram")
+        {
+            output = input*100000;
+        }
+        else if(to=="milligram")
+        {
+            output = input*1000000;
+        }
+        
+    }
+    else if(from == "hectogram")
+    {
+        if(to=="kilogram")
+        {
+            output = input/10;
+        }
+        else if(to=="decagram")
+        {
+            output = input*10;
+        }
+        else if(to=="gram")
+        {
+            output = input*100;
+        }
+        else if(to=="decigram")
+        {
+            output = input*1000;
+        }
+        else if(to=="centigram")
+        {
+            output = input*10000;
+        }
+        else if(to=="milligram")
+        {
+            output = input*100000;
+        }
+        
+    }
+    else if(from == "decagram")
+    {
+        if(to=="kilogram")
+        {
+            output = input/100;
+        }
+        else if(to=="hectogram")
+        {
+            output = input/10;
+        }
+        else if(to=="gram")
+        {
+            output = input*10;
+        }
+        else if(to=="decigram")
+        {
+            output = input*100;
+        }
+        else if(to=="centigram")
+        {
+            output = input*1000;
+        }
+        else if(to=="milligram")
+        {
+            output = input*10000;
+        }
+        
+    }
+    else if(from == "gram")
+    {
+        if(to=="kilogram")
+        {
+            output = input/1000;
+        }
+        else if(to=="hectogram")
+        {
+            output = input/100;
+        }
+        else if(to=="decagram")
+        {
+            output = input/10;
+        }
+        else if(to=="decigram")
+        {
+            output = input*10;
+        }
+        else if(to=="centigram")
+        {
+            output = input*100;
+        }
+        else if(to=="milligram")
+        {
+            output = input*1000;
+        }
+        
+    }
+    else if(from == "decigram")
+    {
+        if(to=="kilogram")
+        {
+            output = input/10000;
+        }
+        else if(to=="hectogram")
+        {
+            output = input/1000;
+        }
+        else if(to=="decagram")
+        {
+            output = input/100;
+        }
+        else if(to=="gram")
+        {
+            output = input/10;
+        }
+        else if(to=="centigram")
+        {
+            output = input*10;
+        }
+        else if(to=="milligram")
+        {
+            output = input*100;
+        }
+        
+    }
+    else if(from == "centigram")
+    {
+        if(to=="kilogram")
+        {
+            output = input/100000;
+        }
+        else if(to=="hectogram")
+        {
+            output = input/10000;
+        }
+        else if(to=="decagram")
+        {
+            output = input/1000;
+        }
+        else if(to=="gram")
+        {
+            output = input/100;
+        }
+        else if(to=="decigram")
+        {
+            output = input/10;
+        }
+        else if(to=="milligram")
+        {
+            output = input*10;
+        }
+        
+    }
+    else if(from == "milligram")
+    {
+        if(to=="kilogram")
+        {
+            output = input/1000000;
+        }
+        else if(to=="hectogram")
+        {
+            output = input/100000;
+        }
+        else if(to=="decagram")
+        {
+            output = input/10000;
+        }
+        else if(to=="gram")
+        {
+            output = input/1000;
+        }
+        else if(to=="decigram")
+        {
+            output = input/100;
+        }
+        else if(to=="centigram")
         {
             output = input/10;
         }
